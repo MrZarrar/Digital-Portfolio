@@ -1,0 +1,12 @@
+steps:
+  # Step 1: Deploy the static files to Cloud Run
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        gcloud run deploy Portfolio \
+        --source . \
+        --platform managed \
+        --region YOUR_REGION \
+        --allow-unauthenticated
