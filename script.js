@@ -72,3 +72,23 @@ const typed  = new Typed('.multiple-text', {
   backDelay: 1000,
   loop: true
 })
+
+
+// Mobile hover fix for social media icons
+document.querySelectorAll('.social-media a').forEach(icon => {
+  let tapped = false;
+
+  icon.addEventListener('touchstart', (event) => {
+    if (!tapped) {
+      // First tap - trigger the hover effect
+      event.preventDefault(); // Prevent the link from being followed
+      icon.classList.add('hover-active'); // Add a class to show hover styles
+      tapped = true;
+      setTimeout(() => tapped = false, 500); // Reset after 500ms
+    } else {
+      // Second tap - follow the link
+      tapped = false; // Reset immediately
+      window.location.href = icon.href;
+    }
+  });
+});

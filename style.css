@@ -100,8 +100,8 @@ section {
 }
 
 .home-content h3 {
-    font-size: 3.2rem;
-    font-weight: 700;
+  font-size: 3.2rem;
+  font-weight: 700;
 }
 
 .home-content h3:nth-of-type(2) {
@@ -146,6 +146,14 @@ span {
 }
 
 .social-media a:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 2rem var(--main-color);
+}
+
+/* Add touch support for hover effect */
+.social-media a:active,
+.social-media a:focus-visible {
   background: var(--main-color);
   color: var(--second-bg-color);
   box-shadow: 0 0 2rem var(--main-color);
@@ -239,7 +247,6 @@ span {
   font-size: 2rem;
   margin: 1rem 0 3rem;
 }
-
 
 .portfolio {
   background: var(--second-bg-color);
